@@ -18,13 +18,11 @@ interface State
 
 export class CustomComponent extends React.Component<CustomComponentProps, State>
 {
-    private _props: CustomComponentProps;
-    private _state: State;
-    
+    private readonly _props: CustomComponentProps;
+    private readonly _state: State;
     
     public constructor(props: CustomComponentProps, state: State)
-    {
-        console.log(props);
+    {    
         super(props, state);
         this._props = props;
         this._state = state;

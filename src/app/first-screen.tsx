@@ -33,7 +33,7 @@ export class FirstScreen extends React.Component<Props, State>
     
     public onButtonPress()
     {
-        this._props.navigation.dispatch({ type: "Navigate", routeName: "Second" });
+        this._props.navigation.dispatch({ type: "Navigation/NAVIGATE", routeName: "Second" });
     }
     
     public render()

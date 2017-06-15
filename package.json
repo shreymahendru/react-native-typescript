@@ -7,8 +7,10 @@
     "ts-build-watch": "npm run ts-build -- -w",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "ios": "npm run ts-build && npm run ts-build-watch & react-native run-ios",
-    "android": "npm run ts-build-watch & react-native run-android"
+    "ios": "npm run build && concurrently -r 'npm run ts-build-watch' 'react-native run-ios'",
+    "android": "npm run ts-build-watch & react-native run-android", 
+    "clean": "rm -rf build/", 
+    "build": "npm run clean && npm run ts-build --"
   },
   "dependencies": {
     "react": "16.0.0-alpha.12",
@@ -23,6 +25,7 @@
     "@types/react-test-renderer": "^15.5.0",
     "babel-jest": "20.0.3",
     "babel-preset-react-native": "1.9.2",
+    "concurrently": "^3.4.0",
     "jest": "20.0.4",
     "react-test-renderer": "16.0.0-alpha.12",
     "ts-jest": "^20.0.6",
